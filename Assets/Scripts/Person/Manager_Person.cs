@@ -13,7 +13,13 @@ public class Manager_Person : MonoBehaviour
         ListOfPersons.Add(PersonGenerator.Generate());
         ListOfPersons.Add(PersonGenerator.Generate());
         ListOfPersons.Add(PersonGenerator.Generate());
-        Debug.Log(ListOfPersons[0].FirstName + " " + ListOfPersons[0].SurName);
+        foreach (Data_Person person in ListOfPersons) {
+            Debug.LogFormat("{0} {1} | Born: {2} - Age: {3} - Experience: {4}", person.FirstName, 
+                                                                                person.SurName, 
+                                                                                person.BirthYear.ToString(), 
+                                                                                1887 - person.BirthYear,  
+                                                                                person.YearsExperience.ToString());
+        }
     }
 
     // Update is called once per frame
